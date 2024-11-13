@@ -328,5 +328,74 @@ domain="www.chatbase.co"
 defer>
 </script>
 
+
+<!--This is Accoutn JS-->
+<!-- swiper js link  -->
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- custom js file link -->
+<script src="js/script.js"></script>
+
+<script type="module">
+   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+   import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+
+   const firebaseConfig = {
+     apiKey: "AIzaSyCnPhyDuGi1fjRv10SmO6ly1fkCyk6HTJY",
+     authDomain: "sose-5c1f0.firebaseapp.com",
+     projectId: "sose-5c1f0",
+     storageBucket: "sose-5c1f0.firebasestorage.app",
+     messagingSenderId: "397548429308",
+     appId: "1:397548429308:web:cb37582315661cafda9c79",
+     measurementId: "G-EPWEK3N56V"
+   };
+
+   const app = initializeApp(firebaseConfig);
+   const auth = getAuth(app);
+
+   // Login Form
+   document.getElementById('loginForm').addEventListener('submit', (e) => {
+     e.preventDefault();
+     const email = document.getElementById('loginEmail').value;
+     const password = document.getElementById('loginPassword').value;
+
+     signInWithEmailAndPassword(auth, email, password)
+       .then((userCredential) => {
+         alert("Login successful!");
+         window.location.href = "immortaladi.github.io/data/"; // Redirect after login
+       })
+       .catch((error) => {
+         alert("Error: " + error.message);
+       });
+   });
+
+   // Register Form
+   document.getElementById('registerForm').addEventListener('submit', (e) => {
+     e.preventDefault();
+     const email = document.getElementById('registerEmail').value;
+     const password = document.getElementById('registerPassword').value;
+     const confirmPassword = document.getElementById('confirmPassword').value;
+
+     if (password !== confirmPassword) {
+       alert("Passwords do not match!");
+       return;
+     }
+
+     createUserWithEmailAndPassword(auth, email, password)
+       .then((userCredential) => {
+         alert("Registration successful!");
+         window.location.href = "immortaladi.github.io/data/"; // Redirect after registration
+       })
+       .catch((error) => {
+         alert("Error: " + error.message);
+       });
+   });
+</script>
+
+
+
+
+
+
 </body>
 </html>
