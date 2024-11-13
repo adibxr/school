@@ -26,11 +26,10 @@
 
    <nav class="navbar">
       <div id="close-navbar" class="fas fa-times"></div>
-      <a href="index.html">home</a>
-      <a href="about.html">about</a>
-       <a href="student.html">Student</a>
-      <a href="contact.html">contact</a>
-      <a href="event.html">Event</a>
+      <a href="index.html">HOME</a>
+      <a href="about.html">ABOUT</a>
+      <a href="contact.html">CONTACT</a>
+      <a href="event.html">EVENT</a>
    </nav>
 
    <div class="icons">
@@ -40,40 +39,36 @@
 
 </header>
 
-<!-- account form section starts  -->
-
+<!-- account form section starts -->
 <div class="account-form">
-
    <div id="close-form" class="fas fa-times"></div>
-
+ 
    <div class="buttons">
-      <span class="btn active login-btn">login</span>
-      <span class="btn register-btn">register</span>
+     <span class="btn active login-btn">login</span>
+     <span class="btn register-btn">register</span>
    </div>
-
-   <form class="login-form active" action="">
-      <h3>login now</h3>
-      <input type="email" placeholder="Enter your email" class="box">
-      <input type="password" placeholder="Enter your password" class="box">
-      <div class="flex">
-         <input type="checkbox" name="" id="remember-me">
-         <label for="remember-me">remember me</label>
-         <a href="#">forgot password?</a>
-      </div>
-      <input type="submit" value="login now" class="btn">
+ 
+   <form class="login-form active" id="loginForm">
+     <h3>login now</h3>
+     <input type="email" id="loginEmail" placeholder="enter your email" class="box" required>
+     <input type="password" id="loginPassword" placeholder="enter your password" class="box" required>
+     <div class="flex">
+       <input type="checkbox" name="" id="remember-me">
+       <label for="remember-me">remember me</label>
+       <a href="#">forgot password?</a>
+     </div>
+     <input type="submit" value="login now" class="btn">
    </form>
-
-   <form class="register-form" action="">
-      <h3>register now</h3>
-      <input type="Name" placeholder="Enter your name" class="box">
-      <input type="Email" placeholder="Enter your email" class="box">
-      <input type="Password" placeholder="Enter your password" class="box">
-      <input type="submit" value="register now" class="btn">
+ 
+   <form class="register-form" id="registerForm">
+     <h3>register now</h3>
+     <input type="email" id="registerEmail" placeholder="enter your email" class="box" required>
+     <input type="password" id="registerPassword" placeholder="enter your password" class="box" required>
+     <input type="password" id="confirmPassword" placeholder="confirm your password" class="box" required>
+     <input type="submit" value="register now" class="btn">
    </form>
-
-</div>
-
-<!-- account form section ends -->
+ </div>
+ <!-- account form section ends -->
 
 <!-- header section ends -->
 
@@ -229,6 +224,60 @@
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
-
+<script type="module">
+   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+   import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+ 
+   const firebaseConfig = {
+    apiKey: "AIzaSyCnPhyDuGi1fjRv10SmO6ly1fkCyk6HTJY",
+    authDomain: "sose-5c1f0.firebaseapp.com",
+    projectId: "sose-5c1f0",
+    storageBucket: "sose-5c1f0.firebasestorage.app",
+    messagingSenderId: "397548429308",
+    appId: "1:397548429308:web:cb37582315661cafda9c79",
+    measurementId: "G-EPWEK3N56V"
+  };
+ 
+   const app = initializeApp(firebaseConfig);
+   const auth = getAuth(app);
+ 
+   // Login Form
+   document.getElementById('loginForm').addEventListener('submit', (e) => {
+     e.preventDefault();
+     const email = document.getElementById('loginEmail').value;
+     const password = document.getElementById('loginPassword').value;
+ 
+     signInWithEmailAndPassword(auth, email, password)
+       .then((userCredential) => {
+         alert("Login successful!");
+         // Handle successful login, maybe redirect or close form
+       })
+       .catch((error) => {
+         alert("Error: " + error.message);
+       });
+   });
+ 
+   // Register Form
+   document.getElementById('registerForm').addEventListener('submit', (e) => {
+     e.preventDefault();
+     const email = document.getElementById('registerEmail').value;
+     const password = document.getElementById('registerPassword').value;
+     const confirmPassword = document.getElementById('confirmPassword').value;
+ 
+     if (password !== confirmPassword) {
+       alert("Passwords do not match!");
+       return;
+     }
+ 
+     createUserWithEmailAndPassword(auth, email, password)
+       .then((userCredential) => {
+         alert("Registration successful!");
+         // Handle successful registration, maybe switch to login form
+       })
+       .catch((error) => {
+         alert("Error: " + error.message);
+       });
+   });
+ </script>
 </body>
 </html>
