@@ -56,5 +56,5 @@ To run this project, you will need to add the following environment variables to
 
 ## Screenshots
 
-![App Screenshot](https://ibb.co/prBkZFH)
+![App Screenshot](https://imgur.com/a/F13JxNS)
 
