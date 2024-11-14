@@ -14,6 +14,7 @@
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="CSS/style.css">
+   <link rel="stylesheet" href="CSS/popup.css">
 
 </head>
 <body>
@@ -77,6 +78,20 @@
 <!-- account form section ends -->
 
 <!-- header section ends -->
+
+
+<div id="popup" class="popup">
+   <div class="popup-content">
+     <span class="close-btn" onclick="hidePopup()">&times;</span>
+     <h2>READ CLASS 10 E-BOOK</h2>
+     <img src="images/read.gif" alt="Book" class="popup-image">
+     <a href="https://immortaladi.github.io/NCERT/" class="popup-button">Read</a>
+   </div>
+ </div>
+
+
+
+
 
 <!-- home section starts  -->
 
@@ -310,9 +325,6 @@
 <!-- swiper js link  -->
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
-<!-- custom js file link -->
-<script src="js/script.js"></script>
-
 <script type="module">
    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
@@ -372,6 +384,8 @@
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
+<script src="js/popup.js"></script>
+
 
    <script>
 window.embeddedChatbotConfig = {
