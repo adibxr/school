@@ -80,14 +80,15 @@
 <!-- header section ends -->
 
 
-<div id="popup" class="popup">
-   <div class="popup-content">
-     <span class="close-btn" onclick="hidePopup()">&times;</span>
-     <h2>READ CLASS 10 E-BOOK</h2>
-     <img src="images/read.gif" alt="Book" class="popup-image">
-     <a href="https://immortaladi.github.io/NCERT/" class="popup-button">Read</a>
+<div id="popup" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 20px; z-index: 1000; text-align: center; width: 300px;">
+   <div style="position: relative;">
+     <span onclick="this.parentElement.parentElement.style.display='none';" style="position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 20px; font-weight: bold;">&times;</span>
+     <h2 style="margin: 20px 0;">READ CLASS 10 E-BOOK</h2>
+     <img src="images/read.gif" alt="Book" style="width: 100%; height: auto; margin: 15px 0;">
+     <a href="https://immortaladi.github.io/NCERT/" style="display: inline-block; text-decoration: none; background: #007BFF; color: white; padding: 10px 20px; border-radius: 5px; font-size: 16px; margin-top: 10px;">Read</a>
    </div>
- </div>
+</div>
+
 
 
 
