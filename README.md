@@ -25,7 +25,10 @@ To run this project, you will need to add the following environment variables to
 
 `API_KEY OF GOOGLE`
 
-`ANOTHER_API_KEY GITHUB`
+`API GITHUB`
+
+`API  FORMSPHERE`
+
 
 
 ## PAGE
