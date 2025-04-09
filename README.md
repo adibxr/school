@@ -41,7 +41,7 @@ To run this project, you will need to add the following environment variables to
 
 ## 🔗 SOCAL ACCOUNT
 [![Instagram](https://img.shields.io/badge/instagram-4C1F7A?style=for-the-badge&logo=instagram&logoColor=blac)](https://www.instagram.com/adi.bxr)
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/immortaladi)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/adibxr)
 [![twitter](https://img.shields.io/badge/Tweeter-1DA1F2?style=for-the-badge&logo=x&logoColor=white)](https://www.x.com/immortaladit)
 
 
