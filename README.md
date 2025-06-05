@@ -60,5 +60,7 @@ To run this project, you will need to add the following environment variables to
 
 ## Screenshots
 
-https://imgur.com/a/F13JxNS
+<img src="https://socialify.git.ci/adibxr/sose/image?description=1&font=KoHo&forks=1&issues=1&language=1&name=1&owner=1&pattern=Floating+Cogs&pulls=1&stargazers=1&theme=Dark"
+  alt="project-image"></p>
+
 
