@@ -337,52 +337,63 @@
 
 
 <script type="module">
-   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-   import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+  import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
 
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCD5FoayYfZlMeNHph5QCBxVR7FF851R6w",
+    authDomain: "article-8a9a1.firebaseapp.com",
+    databaseURL: "https://article-8a9a1-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "article-8a9a1",
+    storageBucket: "article-8a9a1.firebasestorage.app",
+    messagingSenderId: "537477655160",
+    appId: "1:537477655160:web:6cec627306d71c4cea1b8d"
+  };
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyCD5FoayYfZlMeNHph5QCBxVR7FF851R6w",
-  authDomain: "article-8a9a1.firebaseapp.com",
-  databaseURL: "https://article-8a9a1-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "article-8a9a1",
-  storageBucket: "article-8a9a1.firebasestorage.app",
-  messagingSenderId: "537477655160",
-  appId: "1:537477655160:web:6cec627306d71c4cea1b8d"
-};
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-   };
+  // Login Form
+  document.getElementById('loginForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
 
-   // Login Form
-   document.getElementById('loginForm').addEventListener('submit', (e) => {
-     e.preventDefault();
-     const email = document.getElementById('loginEmail').value;
-     const password = document.getElementById('loginPassword').value;
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        alert("Login successful!");
+        window.location.href = "https://immortaladi.github.io/data/"; // Redirect after login
+      })
+      .catch((error) => {
+        alert("Error: " + error.message);
+      });
+  });
 
-     signInWithEmailAndPassword(auth, email, password)
-       .then((userCredential) => {
-         alert("Login successful!");
-         window.location.href = "https://immortaladi.github.io/data/"; // Redirect after login
-       })
-       .catch((error) => {
-         alert("Error: " + error.message);
-       });
-   });
+  // Register Form
+  document.getElementById('registerForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('registerEmail').value;
+    const password = document.getElementById('registerPassword').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
 
-   // Register Form
-   document.getElementById('registerForm').addEventListener('submit', (e) => {
-     e.preventDefault();
-     const email = document.getElementById('registerEmail').value;
-     const password = document.getElementById('registerPassword').value;
-     const confirmPassword = document.getElementById('confirmPassword').value;
+    if (password !== confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
 
-     if (password !== confirmPassword) {
-       alert("Passwords do not match!");
-       return;
-     }
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        alert("Registration successful!");
+        window.location.href = "https://immortaladi.github.io/data/"; // Redirect after registration
+      })
+      .catch((error) => {
+        alert("Error: " + error.message);
+      });
+  });
+</script>
+
 
      createUserWithEmailAndPassword(auth, email, password)
        .then((userCredential) => {
@@ -394,21 +405,6 @@ const app = initializeApp(firebaseConfig);
        });
    });
 </script>
-
-
-<script>
-window.embeddedChatbotConfig = {
-chatbotId: "58GzuEQ2tHjlO2ArDDlgL",
-domain: "www.chatbase.co"
-}
-</script>
-<script
-src="https://www.chatbase.co/embed.min.js"
-chatbotId="58GzuEQ2tHjlO2ArDDlgL"
-domain="www.chatbase.co"
-defer>
-</script>
-
    
 </body>
 </html>
