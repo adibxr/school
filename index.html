@@ -340,18 +340,21 @@
    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
 
-   const firebaseConfig = {
-     apiKey: "AIzaSyCnPhyDuGi1fjRv10SmO6ly1fkCyk6HTJY",
-     authDomain: "sose-5c1f0.firebaseapp.com",
-     projectId: "sose-5c1f0",
-     storageBucket: "sose-5c1f0.firebasestorage.app",
-     messagingSenderId: "397548429308",
-     appId: "1:397548429308:web:cb37582315661cafda9c79",
-     measurementId: "G-EPWEK3N56V"
-   };
 
-   const app = initializeApp(firebaseConfig);
-   const auth = getAuth(app);
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCD5FoayYfZlMeNHph5QCBxVR7FF851R6w",
+  authDomain: "article-8a9a1.firebaseapp.com",
+  databaseURL: "https://article-8a9a1-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "article-8a9a1",
+  storageBucket: "article-8a9a1.firebasestorage.app",
+  messagingSenderId: "537477655160",
+  appId: "1:537477655160:web:6cec627306d71c4cea1b8d"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+   };
 
    // Login Form
    document.getElementById('loginForm').addEventListener('submit', (e) => {
